@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Forms
+  </title>
+  <style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .wrapper {
+      text-align: center;
+    }
+
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+      height: 50px;
+      width: 100px;
+    }
+
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    img {
+      padding: 200px 40px 150px 200px;
+      ;
+      opacity: 0.5;
+      filter: alpha(opacity="50");
+    }
+
+    body {
+			background-color: rgb(235,174,8);
+		}
+
+    .h4 {
+      color: black;
+      padding: 40px 0px 0px 50px;
+    }
+
+    div {
+      padding-left:  25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form action="{{ url_for('handle_data') }}" method="post">
+    <div>
+        <header>
+          <h2 align="center">Personal Information</h2>
+        </header>
+        <div>
+          <header>
+            <h4>Name:</h4>
+          </header>
+        </div>
+        <div>
+            <input type="text" name="firstname" placeholder="First Name" pattern="[A-Za-z]*" required>
+            <input type="text" name="lastname" placeholder="Last Name" pattern="[A-Za-z]*" required>
+        </div>
+
+        <div>
+          <header>
+            <h4>Phone (10 digits)</h4>
+          </header>
+        </div>
+        <div>
+          <input type="tel" name="phone" placeholder="1234567890" maxlength="10" pattern="[1-9]{1}[0-9]{9}" required />
+        </div>
+        <div>
+          <header>
+            <h4>Email</h4>
+          </header>
+          <input type="email" name="email" placeholder="someone@example.com" name="email" required>
+        </div>
+        <div class="cars">
+          <header>
+            <h2 align="center">Car Details</h2>
+          </header>
+          <header>
+            <h4>Type of Car</h4>
+          </header>
+          <input type="radio" name="Car" value="Sedan">Sedan
+          <br>
+          <input type="radio" name="Car" value="SUV">SUV
+          <br>
+          <input type="radio" name="Car" value="Hatchback">Hatchback
+        </div>
+        <div>
+          <header>
+            <h4>Mileage</h4>
+          </header>
+          <input type="Number" name="milage" required>
+        </div>
+        <div>
+          <header>
+            <h4>Insurance</h4>
+          </header>
+          <input type="radio" name="Insurance" value="Yes">Yes
+          <input type="radio" name="Insurance" value="No">No
+        </div>
+        <div>
+          <header>
+            <h2 align="center">Legal Agreement</h2>
+          </header>
+          <header>
+            <h4>Monthly Income Expected</h4>
+          </header>
+          <input type="Number" name="income">
+        </div>
+        <div>
+          <header>
+            <h4>Fraction of maintenance to be borne by the Company(in %):</h4>
+          </header>
+
+          <input type="Number" name="maintenance">
+        </div>
+        <div>
+          <header>
+            <h4>Working Hours</h4>
+          </header>
+          <input type="number" name="engagement">
+          <br>
+        </div>
+        <br>
+        <div>
+            <header>
+                <h4>Option for Figure</h4>
+            </header>
+            <br>
+            <input type="radio" name="option"  value="0" > Line Graph
+            <input type="radio" name="option"  value="1" > Scatter Plot
+            <input type="radio" name="option"  value="2" > Histogram
+        </div>
+        <br>
+        <div class="wrapper">
+          <button class="button1">Submit</button>
+        </div>
+    </div>
+  </form>
+</body>
+
+</html>
